@@ -1,5 +1,6 @@
 #include "Mob.hpp"
 #include "Config.hpp"
+#include "Entity.hpp"
 
 bool Mob::Interrupt()
 {
@@ -64,8 +65,16 @@ void Mob::FallKnock()
 	}
 }
 
+void Mob::Attack()
+{
+	Objects::list.emplace_back(new Entity(id, pos.x + 10.0f, pos.y, 5.0f, 6.0f, 0.0f, 10, 5, 10.0f, -5.0f));
+}
+
 void Mob::update()
 {
+	if (controll)
+		controll(*this);
+
 	vec += gravity;
 	vec.x *= 0.9;
 	if (command.empty())
@@ -90,5 +99,6 @@ void Mob::update()
 		pos.y = common::height;
 		vec.y = 0;
 	}
+	prevVec = vec;
 }
 
