@@ -155,10 +155,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="BinIO.hpp" />
     <ClInclude Include="Entity.hpp" />
     <ClInclude Include="Config.hpp" />
     <ClInclude Include="convert_string.hpp" />
     <ClInclude Include="Draw.hpp" />
+    <ClInclude Include="Field.hpp" />
     <ClInclude Include="Game.hpp" />
     <ClInclude Include="Handle.hpp" />
     <ClInclude Include="Input.hpp" />
@@ -167,11 +169,13 @@
     <ClInclude Include="Particle.hpp" />
     <ClInclude Include="Controll.hpp" />
     <ClInclude Include="Point.hpp" />
+    <ClInclude Include="Tile.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="convert_string.cpp" />
     <ClCompile Include="Draw.cpp" />
+    <ClCompile Include="Field.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Handle.cpp" />
     <ClCompile Include="main.cpp" />
@@ -179,6 +183,14 @@
     <ClCompile Include="Object.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="Controll.cpp" />
+    <ClCompile Include="Tile.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitignore" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="設計.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

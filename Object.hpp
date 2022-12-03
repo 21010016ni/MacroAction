@@ -17,7 +17,6 @@ public:
 		clear = 4,
 	};
 
-	static Draw d;
 	static Point<float> gravity;
 
 	static inline int sid = 0;
