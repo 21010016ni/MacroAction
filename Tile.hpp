@@ -42,24 +42,25 @@ class Tile
 	// 通常タイルセット
 	struct Norm :public Common
 	{
-		Norm(const char8_t* graph);
+		Norm(const char8_t* graph, unsigned short tnum);
 		Ret get(int id, int t)const override;
 	};
 	// アニメーションタイルセット
 	struct Anim :public Common
 	{
-		int pattern;
+		unsigned char pattern;
 		unsigned char type;
 
-		Anim(const char8_t* graph, int pattern, unsigned char type);
+		Anim(const char8_t* graph, unsigned short tnum, unsigned char type, int pattern);
 		Ret get(int id, int t)const override;
 	};
 
-	static std::vector<std::unique_ptr<Common>> data;	// タイルセットリスト
+	static inline std::vector<std::unique_ptr<Common>> data;	// タイルセットリスト
 
 public:
 	static Point<int> size;	// タイルサイズ
 
 	static void load(const char* file);
+	static Ret get(int id, int t);
 };
 
